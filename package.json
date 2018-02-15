@@ -1,0 +1,57 @@
+{
+  "name": "coinmarketcap",
+  "version": "0.3.0",
+  "description": "",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ExodusMovement/coinmarketcap/issues"
+  },
+  "typings": "coinmarketcap.d.ts",
+  "license": "MIT",
+  "author": "The Exodus Movement",
+  "contributors": [
+    "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)",
+    "Evan Shortiss <evanshortiss@gmail.com> (https://github.com/evanshortiss)"
+  ],
+  "files": [
+    "lib",
+    "coinmarketcap.d.ts",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ExodusMovement/coinmarketcap.git"
+  },
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "babel -D src -d lib",
+    "test": "npm run lint && npm run unit",
+    "posttest": "NODE_ENV=production npm run build",
+    "lint": "standard",
+    "unit": "find ./test -name *.test.js -exec node -r babel-register {} \\; | tf-spec"
+  },
+  "devDependencies": {
+    "@tap-format/spec": "^0.2.0",
+    "babel-cli": "^6.5.1",
+    "babel-eslint": "^7.2.1",
+    "babel-plugin-syntax-flow": "^6.18.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-plugin-typecheck": "^3.9.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-register": "^6.24.0",
+    "node-fetch": "^1.6.3",
+    "standard": "^9.0.2",
+    "tape": "^4.6.3",
+    "tape-promise": "^2.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "lib"
+    ]
+  },
+  "dependencies": {}
+}
