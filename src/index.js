@@ -22,6 +22,6 @@ export async function globalMarket (opts?: { convert?: string }): Object {
 }
 
 export async function getCurrencyGraph (opts?: { currencyName: string, startTs: number, endTs: number }): Object {
-  const res = await fetch(`https://graphs.coinmarketcap.com/currencies/${opts.currencyName}/${opts.startTs}/${opts.endTs}`)
+  const res = await fetch(`https://graphs2.coinmarketcap.com/currencies/${opts.currencyName}/${opts.startTs}/${opts.endTs}`)
   return res.json()
 }
